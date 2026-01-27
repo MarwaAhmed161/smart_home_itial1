@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+
+class DeviceCard extends StatefulWidget {
+  final String iconPath;
+  final String name;
+  final bool isOn;
+
+  const DeviceCard({
+    super.key,
+    required this.iconPath,
+    required this.name,
+    required this.isOn,
+  });
+
+  @override
+  State<DeviceCard> createState() => _DeviceCardState();
+}
+
+class _DeviceCardState extends State<DeviceCard> {
+  late bool toggle;
+
+  @override
+  void initState() {
+    super.initState();
+    toggle = widget.isOn;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF1A2235),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Image.asset(
+              widget.iconPath,
+              height: 50,
+            ),
+          ),
+          const SizedBox(height: 14),
+          Text(
+            widget.name,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            toggle ? "On" : "Off",
+            style: TextStyle(color: Colors.white.withOpacity(0.6)),
+          ),
+          const Spacer(),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Switch(
+              value: toggle,
+              activeColor: const Color(0xFFF55E5E),
+              inactiveThumbColor: const Color(0xFF4A80F0),
+              onChanged: (val) {
+                setState(() {
+                  toggle = val;
+                });
+              },
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+final Map<String, List<Map<String, dynamic>>> roomDevices = {
+  "Living Room": [
+    {"name": "TV", "icon": "assets/images/tv.png", "isOn": true},
+    {"name": "Air Conditioner", "icon": "assets/images/smartac.png", "isOn": false},
+    {"name": "Lamp", "icon": "assets/images/lamp.png", "isOn": true},
+  ],
+  "Bed Room": [
+    {"name": "Fan", "icon": "assets/images/fan2.png", "isOn": false},
+    {"name": "Heater", "icon": "assets/images/heater.png", "isOn": true},
+    {"name": "Lamp", "icon": "assets/images/lamp.png", "isOn": false},
+  ],
+  "Kitchen Room": [
+    {"name": "Oven", "icon": "assets/images/oven.png", "isOn": true},
+    {"name": "Fridge", "icon": "assets/images/fridge.png", "isOn": true},
+    {"name": "Microwave", "icon": "assets/images/microwave.png", "isOn": false},
+  ],
+  "Bath Room": [],
+};
+
