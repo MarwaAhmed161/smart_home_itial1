@@ -33,7 +33,8 @@ class RoomCard extends StatelessWidget {
                     style: const TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
                 Text(subtitle,
-                    style: const TextStyle(color: Colors.white70)),
+                    style:  TextStyle(color: Theme.of(context).cardColor
+                    )),
               ],
             ),
           ),

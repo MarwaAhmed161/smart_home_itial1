@@ -174,7 +174,8 @@ class _RoomsPageState extends State<RoomsPage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.orange,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor
+        ,
         child: const Icon(Icons.add),
         onPressed: () {
           showAddRoomDialog(context);

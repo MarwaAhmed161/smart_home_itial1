@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled55/pages/login_page.dart';
 import 'package:untitled55/pages/register_page.dart';
+import 'package:untitled55/theme.dart';
 import 'pages/RoomsPage.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Smart Home App',
-      theme: ThemeData.dark(),
+        theme: AppTheme.darkTheme,
       home: LoginScreeen(),
     );
   }

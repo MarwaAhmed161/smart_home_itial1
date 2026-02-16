@@ -40,8 +40,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF141414),
-      body: SingleChildScrollView(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+
+        body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Form(
           key: _formKey,
@@ -122,7 +123,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: ElevatedButton(
                   onPressed: loading ? null : register,
                   child: loading
-                      ? const CircularProgressIndicator(color: Colors.white)
+                      ?  CircularProgressIndicator(color: Theme.of(context).cardColor
+                  )
                       : const Text("Register"),
                 ),
               ),
