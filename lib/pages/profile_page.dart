@@ -10,9 +10,10 @@ class ProfilePage extends StatelessWidget {
     String email = "marwa@email.com";
 
     return Scaffold(
-      backgroundColor: const Color(0xFF141414),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor
+      ,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white12,
         title: const Text("Profile"),
       ),
 

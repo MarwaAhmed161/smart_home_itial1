@@ -28,7 +28,8 @@ class _DynamicDevicesPageState extends State<DynamicDevicesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF141414),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor
+      ,
       appBar: AppBar(
         title: Text(widget.roomName),
         backgroundColor: Colors.black,

@@ -46,10 +46,10 @@ class _RoomsPageState extends State<RoomsPage> {
     });
 
     return Scaffold(
-      backgroundColor: const Color(0xFF141414),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
 
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white12,
         title: const Text("Smart Home"),
         actions: [
 
@@ -81,7 +81,8 @@ class _RoomsPageState extends State<RoomsPage> {
                 style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white)),
+                    color: Color(0xFF1A2235),
+                )),
 
             const SizedBox(height: 20),
 
@@ -174,8 +175,8 @@ class _RoomsPageState extends State<RoomsPage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor
-        ,
+        backgroundColor:const Color(0xFF1A2235),
+
         child: const Icon(Icons.add),
         onPressed: () {
           showAddRoomDialog(context);

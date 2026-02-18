@@ -2,37 +2,57 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
 
-  static ThemeData darkTheme = ThemeData(
-    brightness: Brightness.dark,
+  static ThemeData lightTheme = ThemeData(
+    brightness: Brightness.light,
 
-    scaffoldBackgroundColor: const Color(0xFF0F172A),
+    scaffoldBackgroundColor: const Color(0xFFF1F5F9),
 
-    primaryColor: const Color(0xFF3B82F6),
+    primaryColor: const Color(0xFF2563EB),
 
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xFF020617),
+      backgroundColor: Colors.white,
+      foregroundColor: Color(0xFF0F172A),
       elevation: 0,
+      centerTitle: false,
     ),
 
-    cardColor: const Color(0xFF1E293B),
+    cardColor: Colors.white,
 
-    colorScheme: const ColorScheme.dark(
-      primary: Color(0xFF3B82F6),
-      secondary: Color(0xFF22C55E),
-      error: Color(0xFFEF4444),
+    colorScheme: const ColorScheme.light(
+      primary: Color(0xFF2563EB),
+      secondary: Color(0xFF38BDF8),
+      surface: Colors.white,
+      onPrimary: Colors.white,
+      onSurface: Color(0xFF0F172A),
     ),
 
     textTheme: const TextTheme(
-      bodyMedium: TextStyle(color: Colors.white),
-      bodySmall: TextStyle(color: Color(0xFF94A3B8)),
+      titleLarge: TextStyle(
+        color: Color(0xFF0F172A),
+        fontWeight: FontWeight.bold,
+      ),
+      bodyMedium: TextStyle(
+        color: Color(0xFF334155),
+      ),
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF3B82F6),
+        backgroundColor: const Color(0xFF2563EB),
+        foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(16),
         ),
+        padding: const EdgeInsets.symmetric(vertical: 14),
+      ),
+    ),
+
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: Colors.white,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: BorderSide.none,
       ),
     ),
   );

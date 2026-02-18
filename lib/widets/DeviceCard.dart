@@ -35,7 +35,8 @@ class _DeviceCardState extends State<DeviceCard> {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: const Color(0xFF1A2235),
+            color: Theme.of(context).cardColor
+            ,
             borderRadius: BorderRadius.circular(20),
           ),
           padding: const EdgeInsets.all(16),
