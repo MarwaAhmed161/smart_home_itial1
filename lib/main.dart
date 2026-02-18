@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled55/pages/login_page.dart';
-import 'package:untitled55/pages/register_page.dart';
-import 'pages/RoomsPage.dart';
+import 'package:untitled55/theme.dart';
+import 'pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Smart Home App',
-      theme: ThemeData.dark(),
-      home: LoginScreeen(),
+      theme: AppTheme.lightTheme,
+      home: const LoginScreeen(),
     );
   }
 }

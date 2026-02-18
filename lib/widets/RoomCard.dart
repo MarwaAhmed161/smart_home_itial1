@@ -16,51 +16,65 @@ class RoomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       onTap: onTap,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(16),
         child: Stack(
           children: [
+
+            /// Background Image
             Positioned.fill(
               child: Image.asset(
                 imageUrl,
                 fit: BoxFit.cover,
-                errorBuilder: (c, e, s) => Container(
-                  color: Colors.grey[850],
-                  child: const Center(child: Icon(Icons.image, size: 40)),
-                ),
               ),
             ),
+
+            /// Dark Gradient Overlay
             Positioned.fill(
               child: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [
-                      Colors.transparent,
-                      Colors.black.withOpacity(0.65),
-                    ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black.withOpacity(0.75),
+                    ],
                   ),
                 ),
               ),
             ),
+
+            /// Text
             Positioned(
-              left: 10,
-              bottom: 10,
-              right: 10,
+              left: 16,
+              right: 16,
+              bottom: 16,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16)),
+
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+
                   const SizedBox(height: 4),
-                  Text(subtitle,
-                      style: const TextStyle(color: Colors.white70)),
+
+                  Text(
+                    subtitle,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.white70,
+                    ),
+                  ),
                 ],
               ),
             ),
